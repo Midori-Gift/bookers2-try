@@ -1,0 +1,13 @@
+
+<%= @books.each do |book| %>
+
+<div>
+  <%= book.title %>
+  <%= book.body %>
+</div>
+
+<% end %>
+
+<% if @book.user == current_user %>
+  <%= link_to "destoroy", book_path(@book), method: :delete %>
+<% end %>
