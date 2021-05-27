@@ -1,37 +1,44 @@
-<h2>User info</h2>
-  <!--<attachment_image_tag>-->
-    <h4>name</h4>
-    <h4>introduction</h4>
-      <!--<link_to "", user_edit_path(current_user) >-->
-      <h2>New book</h2>
-        <!-- <form_with model:@user, local true do |f| > -->
-          <h4>title</h4>
-          <h4>opinion</h4>
+
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+
+      <%= render "books/list", user: @user, new_book: @new_book %>
+
+    </div>
 
 
 
+    <%= @books.each do |book| %>
 
-<%= @books.each do |book| %>
+      <div class="table">
+        <table>
+          <tr>
+            <td>Title</td>
+            <td>Opinion</td>
+          </tr>
+        </table>
+      </div>
 
-  <div class="table">
-    <table>
-      <tr>
-        <td>Title</td>
-        <td>Opinion</td>
-      </tr>
-    </table>
-  </div>
-  <div>
+      <div class="col-md-8 offset-md-1">
 
-  </div>
+         <%= link_to book_path(book.id) do %>
+        <!-- <= attachment_image_tag image, :image > -->
+        <p>ア馬場</p>
+        <% end %>
+        <%= book.title %>
+        <%= book.body %>
 
-  <div>
-    <%= link_to book_path(book.id) do %>
-    <!-- <= attachment_image_tag image, :image > -->
-    <p>ア馬場</p>
+      </div>
+
     <% end %>
-    <%= book.title %>
-    <%= book.body %>
-  </div>
 
-<% end %>
+
+
+
+
+
+
+    </div>
+
+  </div>

@@ -10,9 +10,6 @@
 
 <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
 
-
-  <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-
     <h1>
 
       welcome to <i class="fas fa-book"></i>
@@ -44,14 +41,14 @@
 
       <div class="row">
 
-        <% link_to "log in", user_registration_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+       <%= link_to "log in", user_session_path, class: "btn btn-info btn-sm btn-block mb-3" %>
 
       </div>
 
 
       <div class="row">
 
-        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-sm btn-block" %>
 
       </div>
 
@@ -59,11 +56,6 @@
     </div>
 
   </div>
-
-
-
-  </div>
-
 
 
 
