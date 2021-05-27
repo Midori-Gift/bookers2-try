@@ -1,6 +1,6 @@
 <h2>User info</h2>
 
-<img class="attachment user profile_image fallback" src="/assets/no_image-ede28af….jpg">
+<%= attachment_image_tag current_user, :profile_image, :fill, 40, 40, format: 'jpeg',fallback: "no_image.jpg" %>
 
 
 <table class="table">
@@ -46,11 +46,11 @@
 
 <%= form_with model:new_book, local:true do |f| %>
 
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: "form-control" %>
 
-  <%= f.text_area :body %>
+  <%= f.text_area :body, class: "form-control mt-3" %>
 
-  <%= f.submit 'Create', class: "btn btn-success" %>
+  <%= f.submit 'Create', class: "btn btn-success mt-3" %>
 
 <% end %>
 
