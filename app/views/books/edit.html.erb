@@ -1,0 +1,46 @@
+ <p id="notice"></p>
+
+<div class="container">
+  <div class="row">
+
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+    <h2>Editing Book</h2>
+
+    <div class="table">
+
+      <%= form_with model: @book, local:true do |f| %>
+
+
+        <h4 class="mt-4">
+          Title
+          </h4>
+            <%= f.text_field :title, class:"mt-4 form-control" %></td>
+
+        <h4 class="mt-4">
+          Opinion
+           </h4>
+            <%= f.text_area :body, class:"mt-4 form-control" %></td>
+
+            <%= f.submit 'Update', class:"btn btn-primary mt-4" %>
+
+
+      <% end %>
+
+    </div>
+
+    <%= link_to "Show", book_path(@book.id) %>
+
+    <span>|</span>
+
+    <%= link_to "Back", books_path %>
+
+
+
+  </div>
+
+</div>
+
+
+
+  </div>
