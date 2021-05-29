@@ -1,2 +1,49 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+
+
+<p id="notice"></p>
+
+<div class="container">
+
+  <% if @users.errors.any? %>
+        <%= @users.errors.count %>error
+        <% @users.errors.full_messages.each do |message| %>
+        <%= message %>
+        <% end %>
+      <% end %>
+
+  <div class="row">
+
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+      <div class="form">
+
+        <%= form_with model:@users, local:true do |f| %>
+
+
+        <h2>User info</h2>
+
+
+        <h4>Name</h4>
+
+        <%= f.text_field :name, autofocus: true, id:"name", class:"form-control name" %>
+
+
+        <h4>image</h4>
+
+        <%= f.attachment_field :profile_image %>
+
+
+        <h4>introduction</h4>
+
+        <%= f.text_area :introduction, class: "form-control" %>
+
+        <%= f.submit 'Update', class:"btn btn-success" %>
+
+        <% end %>
+
+
+    </div>
+
+  </div>
+
+</div>
