@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user = current_user
     if current_user != @users.id
       redirect_to user_path(@user.id)
+    end
   end
 
   def update
